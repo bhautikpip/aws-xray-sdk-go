@@ -15,6 +15,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Set identity
+        run: git config --global user.name "bhautikpip"
+
       - name: Generate signed tag
         run: git tag -a -s ${{ github.event.inputs.version }} -m "release ${{ github.event.inputs.version }}"
 
